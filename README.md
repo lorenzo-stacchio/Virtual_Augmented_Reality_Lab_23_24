@@ -1,6 +1,4 @@
-# Virtual_Augmented_Reality_Lab_21_22
-
-# Unibo Virtual Augmented Reality Lab 2020/2021
+# Unibo Virtual Augmented Reality Lab 2021/2022
 ![varlab_unibo_logo](./images/varlab_unibo.png)
 
 This repository contains some Unity projects presented during laboratory classes for the [Virtual and Augmented Reality Laboratory course](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/447969) of the [Alma Mater Studiorum University](https://www.unibo.it/en). 
