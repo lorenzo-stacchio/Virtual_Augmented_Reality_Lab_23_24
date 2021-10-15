@@ -17,10 +17,12 @@ public class count_points : MonoBehaviour
 
     void Update()
     {
-        #TODO: implementa cambio punteggio sulla scritta del testo del canvas
-       Debug.Log(transform.GetSiblingIndex());
-       int child_of_parent = transform.parent.childCount;
-       Debug.Log(child_of_parent);
+       // TODO: implementa cambio punteggio sulla scritta del testo del canvas, prendi componente testo e cambialo
+       //Debug.Log(transform.GetSiblingIndex());
+       //int my_index = transform.GetSiblingIndex();
+       //int child_of_parent = transform.parent.childCount; //it is two
+       //this.transform.parent.GetChild(0).GetChild(0).GetComponents();//<Text>().text = "Actual points: " + points;
+       //Debug.Log(child_of_parent);
        //Debug.Log(transform.GetSiblingIndex());
        //this.transform.parent.Find("Text").GetComponent<Text>().text = "Actual points: " + points;
     }
