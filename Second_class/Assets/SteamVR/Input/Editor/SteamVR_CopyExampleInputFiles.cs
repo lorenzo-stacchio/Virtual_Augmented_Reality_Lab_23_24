@@ -11,13 +11,11 @@ namespace Valve.VR
     {
         public const string steamVRInputExampleJSONCopiedKey = "SteamVR_Input_CopiedExamples";
 
-        public const string exampleJSONFolderParent = "Input";
         public const string exampleJSONFolderName = "ExampleJSON";
 
         [UnityEditor.Callbacks.DidReloadScripts]
         private static void OnReloadScripts()
         {
-            SteamVR_Input.CheckOldLocation();
             CopyFiles();
         }
 
@@ -26,22 +24,33 @@ namespace Valve.VR
             bool hasCopied = EditorPrefs.GetBool(steamVRInputExampleJSONCopiedKey, false);
             if (hasCopied == false || force == true)
             {
-                string actionsFilePath = SteamVR_Input.GetActionsFilePath();
+                string actionsFilePath = SteamVR_Settings.instance.actionsFilePath;
                 bool exists = File.Exists(actionsFilePath);
                 if (exists == false)
                 {
-                    string steamVRFolder = SteamVR.GetSteamVRFolderPath();
-                    string exampleLocation = Path.Combine(steamVRFolder, exampleJSONFolderParent);
-                    string exampleFolderPath = Path.Combine(exampleLocation, exampleJSONFolderName);
+                    MonoScript[] monoScripts = MonoImporter.GetAllRuntimeMonoScripts();
 
-                    string streamingAssetsPath = SteamVR_Input.GetActionsFileFolder();
+                    Type steamVRInputType = typeof(SteamVR_Input);
+                    MonoScript monoScript = monoScripts.FirstOrDefault(script => script.GetClass() == steamVRInputType);
+                    string path = AssetDatabase.GetAssetPath(monoScript);
 
-                    string[] files = Directory.GetFiles(exampleFolderPath, "*.json");
+                    int lastIndex = path.LastIndexOf("/");
+                    path = path.Substring(0, lastIndex + 1);
+                    path += exampleJSONFolderName;
+
+                    string dataPath = Application.dataPath;
+                    lastIndex = dataPath.LastIndexOf("/Assets");
+                    dataPath = dataPath.Substring(0, lastIndex + 1);
+
+                    path = dataPath + path;
+
+                    string[] files = Directory.GetFiles(path, "*.json");
                     foreach (string file in files)
                     {
-                        string filename = Path.GetFileName(file);
+                        lastIndex = file.LastIndexOf("\\");
+                        string filename = file.Substring(lastIndex + 1);
 
-                        string newPath = Path.Combine(streamingAssetsPath, filename);
+                        string newPath = Path.Combine(dataPath, filename);
 
                         try
                         {

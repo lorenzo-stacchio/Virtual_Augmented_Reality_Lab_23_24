@@ -19,9 +19,6 @@ namespace Valve.VR
         public List<Dictionary<string, string>> localization = new List<Dictionary<string, string>>();
 
         [JsonIgnore]
-        public string filePath;
-
-        [JsonIgnore]
         public List<SteamVR_Input_ActionFile_LocalizationItem> localizationHelperList = new List<SteamVR_Input_ActionFile_LocalizationItem>();
 
         public void InitializeHelperLists()
@@ -116,10 +113,10 @@ namespace Valve.VR
         {
             List<string> files = new List<string>();
 
-            FileInfo actionFileInfo = new FileInfo(this.filePath);
+            FileInfo actionFileInfo = new FileInfo(SteamVR_Input.actionsFilePath);
             string path = actionFileInfo.Directory.FullName;
 
-            files.Add(this.filePath);
+            files.Add(SteamVR_Input.actionsFilePath);
 
             foreach (var binding in default_bindings)
             {
@@ -183,6 +180,11 @@ namespace Valve.VR
             }
         }
 
+        public bool IsInStreamingAssets()
+        {
+            return SteamVR_Input.actionsFilePath.Contains("StreamingAssets");
+        }
+
 
         private const string findString_appKeyStart = "\"app_key\"";
         private const string findString_appKeyEnd = "\",";
@@ -215,22 +217,6 @@ namespace Valve.VR
                 File.WriteAllText(newFilePath, newJsonText);
             }
         }
-        public static SteamVR_Input_ActionFile Open(string path)
-        {
-            if (File.Exists(path))
-            {
-                string jsonText = File.ReadAllText(path);
-
-                SteamVR_Input_ActionFile actionFile = Valve.Newtonsoft.Json.JsonConvert.DeserializeObject<SteamVR_Input_ActionFile>(jsonText);
-                actionFile.filePath = path;
-                actionFile.InitializeHelperLists();
-
-                return actionFile;
-            }
-
-            return null;
-        }
-
 
         public void Save(string path)
         {
@@ -247,22 +233,16 @@ namespace Valve.VR
             File.WriteAllText(path, json);
         }
     }
-
     public enum SteamVR_Input_ActionFile_DefaultBinding_ControllerTypes
     {
-        vive, //hmd
-        vive_pro, //hmd
+        vive,
+        vive_pro,
         vive_controller,
         generic,
         holographic_controller,
         oculus_touch,
         gamepad,
         knuckles,
-        index_hmd, //hmd
-        vive_cosmos_controller,
-        rift, //hmd
-        vive_tracker_camera,
-        vive_tracker,
     }
 
     [System.Serializable]
@@ -598,7 +578,7 @@ namespace Valve.VR
         public string[] references = new string[] { "SteamVR" };
         public string[] optionalUnityReferences = new string[0];
         public string[] includePlatforms = new string[0];
-        public string[] excludePlatforms = new string[] { "Android" };
+        public string[] excludePlatforms = new string[0];
         public bool allowUnsafeCode = false;
         public bool overrideReferences = false;
         public string[] precompiledReferences = new string[0];
@@ -628,9 +608,6 @@ namespace Valve.VR
         public static string holographic_hmd = "holographic_hmd";
         public static string rift = "rift";
         public static string vive_tracker_camera = "vive_tracker_camera";
-        public static string vive_cosmos = "vive_cosmos";
-        public static string vive_cosmos_controller = "vive_cosmos_controller";
-        public static string index_hmd = "index_hmd";
     }
 
     static public class SteamVR_Input_ActionFile_ActionTypes

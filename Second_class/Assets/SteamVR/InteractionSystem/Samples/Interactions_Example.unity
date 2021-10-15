@@ -1233,7 +1233,6 @@ Transform:
   - {fileID: 1548887376}
   - {fileID: 777894233}
   - {fileID: 276115636}
-  - {fileID: 965528276}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1001 &65749683
@@ -1520,23 +1519,6 @@ MonoBehaviour:
   releaseVelocityStyle: 4
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
-  scaleReleaseVelocityThreshold: -1
-  scaleReleaseVelocityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
@@ -1548,11 +1530,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  onHeldUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!114 &80417567
 MonoBehaviour:
@@ -1596,7 +1573,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &80417568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,7 +2213,7 @@ Prefab:
     - target: {fileID: 114000012133941026, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 2}
       propertyPath: attachmentFlags
-      value: 341
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 114000012133941026, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 2}
@@ -3508,7 +3484,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!1 &265666275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,8 +3631,10 @@ MonoBehaviour:
   poseNames:
   - HappyBallPose (MAIN)
   - HappyBallPoseSqueezed
-  overridePreviewLeftHandPrefab: {fileID: 0}
-  overridePreviewRightHandPrefab: {fileID: 0}
+  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
+    type: 2}
+  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
+    type: 2}
   skeletonMainPose: {fileID: 11400000, guid: 5faebc5465b41b641bf7285f25ce9ab9, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: 6dc41a1d6d2a48e41a7adc3e27f1a9ff, type: 2}
@@ -3708,23 +3685,6 @@ MonoBehaviour:
   releaseVelocityStyle: 3
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
-  scaleReleaseVelocityThreshold: -1
-  scaleReleaseVelocityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
@@ -3736,11 +3696,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  onHeldUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!114 &276115639
 MonoBehaviour:
@@ -3798,7 +3753,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!54 &276115641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3963,7 +3917,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &277229949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5533,11 +5486,6 @@ Prefab:
       propertyPath: previewLeftInstance
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010658121184, guid: fb710a001890d9a44bb74a8ce4f20cc0,
-        type: 2}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb710a001890d9a44bb74a8ce4f20cc0, type: 2}
   m_IsPrefabParent: 0
@@ -5931,7 +5879,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &388899355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6053,11 +6000,6 @@ Prefab:
     - target: {fileID: 1000012660339372, guid: e0b086fbb874df143b6ac8f53cea5424, type: 2}
       propertyPath: m_Name
       value: Throwable (Newton)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012133941026, guid: e0b086fbb874df143b6ac8f53cea5424,
-        type: 2}
-      propertyPath: attachmentFlags
-      value: 341
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0b086fbb874df143b6ac8f53cea5424, type: 2}
@@ -7086,7 +7028,6 @@ GameObject:
   - 64: {fileID: 492562082}
   - 23: {fileID: 492562081}
   - 114: {fileID: 492562080}
-  - 114: {fileID: 492562084}
   m_Layer: 0
   m_Name: TeleportArea (Locked)
   m_TagString: Untagged
@@ -7168,18 +7109,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492562078}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &492562084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 492562078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54a4af4cc6b48a9449034f15c9691985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  children: 0
 --- !u!1001 &497333048
 Prefab:
   m_ObjectHideFlags: 0
@@ -7439,7 +7368,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!54 &504149797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7470,8 +7398,10 @@ MonoBehaviour:
   blendEditorExpanded: 1
   poseNames:
   - sphereSmallPose (MAIN)
-  overridePreviewLeftHandPrefab: {fileID: 0}
-  overridePreviewRightHandPrefab: {fileID: 0}
+  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
+    type: 2}
+  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
+    type: 2}
   skeletonMainPose: {fileID: 11400000, guid: ccd16738d1f943640aa2aed1071a3897, type: 2}
   skeletonAdditionalPoses: []
   showLeftPreview: 0
@@ -8651,11 +8581,6 @@ Prefab:
       propertyPath: displayHandWhileHeld
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012554025852, guid: e0b086fbb874df143b6ac8f53cea5424,
-        type: 2}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0b086fbb874df143b6ac8f53cea5424, type: 2}
   m_IsPrefabParent: 0
@@ -8773,7 +8698,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &634688662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9240,6 +9164,8 @@ MonoBehaviour:
   updatePose: 1
   onlySetRotations: 0
   skeletonBlend: 1
+  attachedTransformBlend: 0
+  attachedToTransform: {fileID: 0}
   onBoneTransformsUpdated:
     m_PersistentCalls:
       m_Calls: []
@@ -9266,10 +9192,6 @@ MonoBehaviour:
     m_TypeName: Valve.VR.SteamVR_Behaviour_Skeleton_TrackingChangedEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mirroring: 0
-  fallbackPoser: {fileID: 0}
-  fallbackCurlAction:
-    actionPath: 
-    needsReinit: 0
 --- !u!1 &671960962
 GameObject:
   m_ObjectHideFlags: 0
@@ -10193,11 +10115,6 @@ Prefab:
         type: 2}
       propertyPath: displayHandWhileHeld
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012554025852, guid: e0b086fbb874df143b6ac8f53cea5424,
-        type: 2}
-      propertyPath: scale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0b086fbb874df143b6ac8f53cea5424, type: 2}
@@ -12088,7 +12005,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!64 &888846723
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12267,6 +12183,10 @@ Prefab:
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
+      propertyPath: teleportAction.actionPath
+      value: /actions/default/in/Teleport
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
@@ -12582,7 +12502,7 @@ Prefab:
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
       propertyPath: attachmentFlags
-      value: 341
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
@@ -12626,18 +12546,6 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.9906824
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010658121184, guid: fb710a001890d9a44bb74a8ce4f20cc0,
-        type: 2}
-      propertyPath: overridePreviewLeftHandPrefab
-      value: 
-      objectReference: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-        type: 2}
-    - target: {fileID: 114000010658121184, guid: fb710a001890d9a44bb74a8ce4f20cc0,
-        type: 2}
-      propertyPath: overridePreviewRightHandPrefab
-      value: 
-      objectReference: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb710a001890d9a44bb74a8ce4f20cc0, type: 2}
   m_IsPrefabParent: 0
@@ -13083,8 +12991,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 953489195}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0087, z: -0.471}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 1.0087, z: -0.332}
   m_LocalScale: {x: 0.2, y: 0.03184862, z: 0.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -13103,7 +13011,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7e90f10e44a186a49a00679d068515ed, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -13409,11 +13317,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 956257541}
---- !u!4 &965528276 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1127476816}
 --- !u!1001 &966448837
 Prefab:
   m_ObjectHideFlags: 0
@@ -13949,7 +13852,7 @@ Prefab:
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
       propertyPath: attachmentFlags
-      value: 341
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
@@ -14163,7 +14066,7 @@ Prefab:
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
       propertyPath: attachmentFlags
-      value: 341
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
@@ -14438,7 +14341,7 @@ Prefab:
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
       propertyPath: attachmentFlags
-      value: 341
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
@@ -15347,56 +15250,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127345940}
---- !u!1001 &1127476816
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 63783779}
-    m_Modifications:
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.29399988
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.2014
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.19000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.49999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.50000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.49999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011278773620, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012099312676, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_Name
-      value: ModalThrowable (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012099312676, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a7c2b37096983fb40addeabf8a2aefbe, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1133819117
 GameObject:
   m_ObjectHideFlags: 0
@@ -15479,7 +15332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buttons
+  m_Text: Proximity Button
 --- !u!222 &1133819121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16892,7 +16745,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1224984518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17669,7 +17521,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1298765615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17911,7 +17762,7 @@ Prefab:
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
       propertyPath: attachmentFlags
-      value: 341
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 114000013394261110, guid: fb710a001890d9a44bb74a8ce4f20cc0,
         type: 2}
@@ -17958,11 +17809,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.w
       value: 0.9906824
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010658121184, guid: fb710a001890d9a44bb74a8ce4f20cc0,
-        type: 2}
-      propertyPath: scale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb710a001890d9a44bb74a8ce4f20cc0, type: 2}
@@ -19545,7 +19391,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7e90f10e44a186a49a00679d068515ed, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -19877,7 +19723,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1431990461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20102,7 +19947,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000014195058408, guid: 88075a54c7fb1484ba25db394b612917, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000014195058408, guid: 88075a54c7fb1484ba25db394b612917, type: 2}
       propertyPath: m_LocalPosition.y
@@ -20110,7 +19955,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014195058408, guid: 88075a54c7fb1484ba25db394b612917, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.471
+      value: -0.332
       objectReference: {fileID: 0}
     - target: {fileID: 4000014195058408, guid: 88075a54c7fb1484ba25db394b612917, type: 2}
       propertyPath: m_LocalRotation.x
@@ -20132,11 +19977,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 23000010054905394, guid: 88075a54c7fb1484ba25db394b612917,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e90f10e44a186a49a00679d068515ed, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88075a54c7fb1484ba25db394b612917, type: 2}
   m_IsPrefabParent: 0
@@ -21874,7 +21714,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1566332641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22106,7 +21945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemPackage: {fileID: 11450054, guid: 98a3ad29136d5c04f8a025adf1cbd704, type: 2}
-  useItemPackagePreview: 1
   requireGrabActionToTake: 1
   requireReleaseActionToReturn: 0
   showTriggerHint: 1
@@ -22166,7 +22004,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!1 &1578856789
 GameObject:
   m_ObjectHideFlags: 0
@@ -22743,7 +22580,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7e90f10e44a186a49a00679d068515ed, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -23115,7 +22952,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1655820027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23411,7 +23247,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1679363261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23896,7 +23731,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1703345923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26291,14 +26125,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11494192, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
-      propertyPath: urpControllerMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 70a2eb634d7ed434b86d36f190fcf3a1, type: 2}
-    - target: {fileID: 11489144, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
-      propertyPath: urpControllerMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 70a2eb634d7ed434b86d36f190fcf3a1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
   m_IsPrefabParent: 0
@@ -26818,23 +26644,6 @@ Prefab:
       propertyPath: m_Name
       value: Throwable (Newton)
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012133941026, guid: e0b086fbb874df143b6ac8f53cea5424,
-        type: 2}
-      propertyPath: attachmentFlags
-      value: 341
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012554025852, guid: e0b086fbb874df143b6ac8f53cea5424,
-        type: 2}
-      propertyPath: overridePreviewLeftHandPrefab
-      value: 
-      objectReference: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-        type: 2}
-    - target: {fileID: 114000012554025852, guid: e0b086fbb874df143b6ac8f53cea5424,
-        type: 2}
-      propertyPath: overridePreviewRightHandPrefab
-      value: 
-      objectReference: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0b086fbb874df143b6ac8f53cea5424, type: 2}
   m_IsPrefabParent: 0
@@ -27268,7 +27077,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &1989132726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28077,7 +27885,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &2053235234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28111,23 +27918,6 @@ MonoBehaviour:
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
-  scaleReleaseVelocityThreshold: -1
-  scaleReleaseVelocityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
@@ -28139,11 +27929,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  onHeldUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!136 &2053235236
 CapsuleCollider:
@@ -28248,18 +28033,6 @@ Prefab:
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010208793216, guid: 4d7627d70abb4e247b7d958e6634b2f1,
-        type: 2}
-      propertyPath: overridePreviewLeftHandPrefab
-      value: 
-      objectReference: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
-        type: 2}
-    - target: {fileID: 114000010208793216, guid: 4d7627d70abb4e247b7d958e6634b2f1,
-        type: 2}
-      propertyPath: overridePreviewRightHandPrefab
-      value: 
-      objectReference: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d7627d70abb4e247b7d958e6634b2f1, type: 2}
   m_IsPrefabParent: 0
@@ -28627,8 +28400,10 @@ MonoBehaviour:
   - spherePose (MAIN)
   - longbowPose
   - longboy
-  overridePreviewLeftHandPrefab: {fileID: 0}
-  overridePreviewRightHandPrefab: {fileID: 0}
+  previewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
+    type: 2}
+  previewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
+    type: 2}
   skeletonMainPose: {fileID: 11400000, guid: 4c3a83da33c30f44b82278a7f4ae8bd2, type: 2}
   skeletonAdditionalPoses:
   - {fileID: 11400000, guid: b11bd330216ce2944a1928a54925d7de, type: 2}
@@ -28703,23 +28478,6 @@ MonoBehaviour:
   releaseVelocityStyle: 3
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
-  scaleReleaseVelocityThreshold: -1
-  scaleReleaseVelocityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
@@ -28731,11 +28489,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  onHeldUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!114 &2108325450
 MonoBehaviour:
@@ -28779,7 +28532,6 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
-  hoverPriority: 0
 --- !u!114 &2108325451
 MonoBehaviour:
   m_ObjectHideFlags: 0

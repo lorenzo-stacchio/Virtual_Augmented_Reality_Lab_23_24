@@ -11,10 +11,10 @@ namespace Valve.VR
 {
     [Serializable]
     /// <summary>
-    /// In actions are all input type actions. Boolean, Single, Vector2, Vector3, Skeleton, and Pose.
+    /// In actions are all input type actions. Boolean, Single, Vector2, Vector3, Skeleton, and Pose. 
     /// </summary>
-    public abstract class SteamVR_Action_In<SourceMap, SourceElement> : SteamVR_Action<SourceMap, SourceElement>, ISteamVR_Action_In
-        where SourceMap : SteamVR_Action_In_Source_Map<SourceElement>, new()
+    public abstract class SteamVR_Action_In<SourceMap, SourceElement> : SteamVR_Action<SourceMap, SourceElement>, ISteamVR_Action_In 
+        where SourceMap : SteamVR_Action_In_Source_Map<SourceElement>, new() 
         where SourceElement : SteamVR_Action_In_Source, new()
     {
         /// <summary><strong>[Shortcut to: SteamVR_Input_Sources.Any]</strong> Returns true if the action has been changed since the previous update</summary>
@@ -48,7 +48,7 @@ namespace Valve.VR
         public string localizedOriginName { get { return sourceMap[SteamVR_Input_Sources.Any].localizedOriginName; } }
 
         /// <summary>
-        /// <strong>[Should not be called by user code]</strong>
+        /// <strong>[Should not be called by user code]</strong> 
         /// Updates the data for all the input sources the system has detected need to be updated.
         /// </summary>
         public virtual void UpdateValues()
@@ -140,7 +140,7 @@ namespace Valve.VR
         }
 
         /// <summary>
-        /// <strong>[Should not be called by user code]</strong>
+        /// <strong>[Should not be called by user code]</strong> 
         /// Forces the system to start updating the data for this action and the specified input source.
         /// Should only be used if you've set SteamVR_Action.startUpdatingSourceOnAccess to false.
         /// </summary>
@@ -149,22 +149,12 @@ namespace Valve.VR
         {
             sourceMap.ForceAddSourceToUpdateList(inputSource);
         }
-
-        /// <summary>
-        /// Returns a string for the type of controller that was being used the last time the action was triggered. Common types: 
-        /// vive_controller, oculus_touch, knuckles, vive_cosmos_controller, logitech_stylus
-        /// </summary>
-        /// <param name="inputSource">The device you would like to get data from. Any if the action is not device specific.</param>
-        public string GetControllerType(SteamVR_Input_Sources inputSource)
-        {
-            return SteamVR.instance.GetStringProperty(ETrackedDeviceProperty.Prop_ControllerType_String, GetDeviceIndex(inputSource));
-        }
     }
 
     public class SteamVR_Action_In_Source_Map<SourceElement> : SteamVR_Action_Source_Map<SourceElement>
         where SourceElement : SteamVR_Action_In_Source, new()
     {
-        protected List<int> updatingSources = new List<int>();
+        protected List<SteamVR_Input_Sources> updatingSources = new List<SteamVR_Input_Sources>();
 
         /// <summary>
         /// <strong>[Should not be called by user code]</strong>
@@ -174,11 +164,9 @@ namespace Valve.VR
         /// <param name="inputSource">The device you would like to get data from. Any if the action is not device specific.</param>
         public bool IsUpdating(SteamVR_Input_Sources inputSource)
         {
-            int isUpdatingSourceIndex = (int)inputSource;
-
             for (int sourceIndex = 0; sourceIndex < updatingSources.Count; sourceIndex++)
             {
-                if (isUpdatingSourceIndex == updatingSources[sourceIndex])
+                if (inputSource == updatingSources[sourceIndex])
                     return true;
             }
 
@@ -194,32 +182,25 @@ namespace Valve.VR
         }
 
         /// <summary>
-        /// <strong>[Should not be called by user code]</strong>
+        /// <strong>[Should not be called by user code]</strong> 
         /// Forces the system to start updating the data for this action and the specified input source.
         /// Should only be used if you've set SteamVR_Action.startUpdatingSourceOnAccess to false.
         /// </summary>
         /// <param name="inputSource">The device you would like to get data from. Any if the action is not device specific.</param>
         public void ForceAddSourceToUpdateList(SteamVR_Input_Sources inputSource)
         {
-            int sourceIndex = (int)inputSource;
-
-            if (sources[sourceIndex] == null)
+            if (sources[inputSource].isUpdating == false)
             {
-                sources[sourceIndex] = new SourceElement();
-            }
-
-            if (sources[sourceIndex].isUpdating == false)
-            {
-                updatingSources.Add(sourceIndex);
-                sources[sourceIndex].isUpdating = true;
+                updatingSources.Add(inputSource);
+                sources[inputSource].isUpdating = true;
 
                 if (SteamVR_Input.isStartupFrame == false)
-                    sources[sourceIndex].UpdateValue();
+                    sources[inputSource].UpdateValue();
             }
         }
 
         /// <summary>
-        /// <strong>[Should not be called by user code]</strong>
+        /// <strong>[Should not be called by user code]</strong> 
         /// Updates the data for all the input sources the system has detected need to be updated.
         /// </summary>
         public void UpdateValues()
@@ -232,7 +213,7 @@ namespace Valve.VR
     }
 
     /// <summary>
-    /// In actions are all input type actions. Boolean, Single, Vector2, Vector3, Skeleton, and Pose.
+    /// In actions are all input type actions. Boolean, Single, Vector2, Vector3, Skeleton, and Pose. 
     /// This class fires onChange and onUpdate events.
     /// </summary>
     public abstract class SteamVR_Action_In_Source : SteamVR_Action_Source, ISteamVR_Action_In_Source
@@ -240,12 +221,12 @@ namespace Valve.VR
         protected static uint inputOriginInfo_size = 0;
 
         /// <summary>
-        /// <strong>[Should not be called by user code]</strong>
+        /// <strong>[Should not be called by user code]</strong> 
         /// Forces the system to start updating the data for this action and the specified input source.
         /// Should only be used if you've set SteamVR_Action.startUpdatingSourceOnAccess to false.
         /// </summary>
         public bool isUpdating { get; set; }
-
+        
         /// <summary>The time the action was updated (Time.realtimeSinceStartup)</summary>
         public float updateTime { get; protected set; }
 
@@ -355,7 +336,7 @@ namespace Valve.VR
     public interface ISteamVR_Action_In : ISteamVR_Action, ISteamVR_Action_In_Source
     {
         /// <summary>
-        /// <strong>[Should not be called by user code]</strong>
+        /// <strong>[Should not be called by user code]</strong> 
         /// Updates the data for all the input sources the system has detected need to be updated.
         /// </summary>
         void UpdateValues();

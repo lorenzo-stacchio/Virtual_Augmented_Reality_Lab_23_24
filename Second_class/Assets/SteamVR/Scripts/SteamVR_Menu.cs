@@ -1,4 +1,4 @@
-//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
 // Purpose: Example menu using OnGUI with SteamVR_Camera's overlay support
 //
@@ -158,6 +158,19 @@ namespace Valve.VR
                 GUILayout.EndHorizontal();
             }
 
+            overlay.highquality = GUILayout.Toggle(overlay.highquality, "High quality");
+
+            if (overlay.highquality)
+            {
+                overlay.curved = GUILayout.Toggle(overlay.curved, "Curved overlay");
+                overlay.antialias = GUILayout.Toggle(overlay.antialias, "Overlay RGSS(2x2)");
+            }
+            else
+            {
+                overlay.curved = false;
+                overlay.antialias = false;
+            }
+
             var tracker = SteamVR_Render.Top();
             if (tracker != null)
             {
@@ -167,12 +180,11 @@ namespace Valve.VR
                 {
                     if (GUILayout.Button("Switch to Standing"))
                         SteamVR.settings.trackingSpace = ETrackingUniverseOrigin.TrackingUniverseStanding;
-
                     if (GUILayout.Button("Center View"))
                     {
-                        var chaperone = OpenVR.Chaperone;
-                        if (chaperone != null)
-                            chaperone.ResetZeroPose(SteamVR.settings.trackingSpace);
+                        var system = OpenVR.System;
+                        if (system != null)
+                            system.ResetSeatedZeroPose();
                     }
                 }
                 else
@@ -224,7 +236,7 @@ namespace Valve.VR
             var texture = overlay.texture as RenderTexture;
             if (texture == null)
             {
-                Debug.LogError("<b>[SteamVR]</b> Menu requires overlay texture to be a render texture.", this);
+                Debug.LogError("<b>[SteamVR]</b> Menu requires overlay texture to be a render texture.");
                 return;
             }
 

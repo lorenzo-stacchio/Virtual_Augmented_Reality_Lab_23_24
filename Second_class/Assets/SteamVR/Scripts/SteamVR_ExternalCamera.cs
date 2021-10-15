@@ -12,9 +12,6 @@ namespace Valve.VR
 {
     public class SteamVR_ExternalCamera : MonoBehaviour
     {
-        private SteamVR_Action_Pose cameraPose = null;
-        private SteamVR_Input_Sources cameraInputSource = SteamVR_Input_Sources.Camera;
-
         [System.Serializable]
         public struct Config
         {
@@ -30,7 +27,6 @@ namespace Valve.VR
             public bool disableStandardAssets;
         }
 
-        [Space()]
         public Config config;
         public string configPath;
 
@@ -119,34 +115,15 @@ namespace Valve.VR
             }
         }
 
-        System.IO.FileSystemWatcher watcher;
-#else
-	}
-#endif
-
-        public void SetupPose(SteamVR_Action_Pose newCameraPose, SteamVR_Input_Sources newCameraSource)
-        {
-            cameraPose = newCameraPose;
-            cameraInputSource = newCameraSource;
-
-            AutoEnableActionSet();
-
-            SteamVR_Behaviour_Pose poseBehaviour = this.gameObject.AddComponent<SteamVR_Behaviour_Pose>();
-            poseBehaviour.poseAction = newCameraPose;
-            poseBehaviour.inputSource = newCameraSource;
-        }
-
-        public void SetupDeviceIndex(int deviceIndex)
-        {
-            SteamVR_TrackedObject trackedObject = this.gameObject.AddComponent<SteamVR_TrackedObject>();
-            trackedObject.SetDeviceIndex(deviceIndex);
-        }
-
         void OnChanged(object source, System.IO.FileSystemEventArgs e)
         {
             ReadConfig();
         }
 
+        System.IO.FileSystemWatcher watcher;
+#else
+	}
+#endif
         Camera cam;
         Transform target;
         GameObject clipQuad;
@@ -174,7 +151,7 @@ namespace Valve.VR
                 target = steamVR_Camera.head;
             }
 
-
+            
 
             var root = transform.parent;
             var origin = target.parent;
@@ -379,20 +356,16 @@ namespace Valve.VR
                 SteamVR_Camera.sceneResolutionScale = config.sceneResolutionScale;
             }
 
-            AutoEnableActionSet();
-        }
-
-        private void AutoEnableActionSet()
-        {
             if (autoEnableDisableActionSet)
             {
-                if (cameraPose != null)
+                SteamVR_Behaviour_Pose pose = this.GetComponentInChildren<SteamVR_Behaviour_Pose>();
+                if (pose != null)
                 {
-                    if (cameraPose.actionSet.IsActive(cameraInputSource) == false)
+                    if (pose.poseAction.actionSet.IsActive(pose.inputSource) == false)
                     {
-                        activatedActionSet = cameraPose.actionSet; //automatically activate the actionset if it isn't active already. (will deactivate on component disable)
-                        activatedInputSource = cameraInputSource;
-                        cameraPose.actionSet.Activate(cameraInputSource);
+                        activatedActionSet = pose.poseAction.actionSet; //automatically activate the actionset if it isn't active already. (will deactivate on component disable)
+                        activatedInputSource = pose.inputSource;
+                        pose.poseAction.actionSet.Activate(pose.inputSource);
                     }
                 }
             }

@@ -62,10 +62,9 @@ namespace Valve.VR.InteractionSystem
 
                 handAnimator = handInstance.GetComponentInChildren<Animator>();
 
-                if (handSkeleton.skeletonAction.activeBinding == false && handSkeleton.fallbackPoser == null)
+                if (handSkeleton.skeletonAction.activeBinding == false)
                 {
-                    Debug.LogWarning("Skeleton action: " + handSkeleton.skeletonAction.GetPath() + " is not bound. Your controller may not support SteamVR Skeleton Input. " +
-                        "Please add a fallback skeleton poser to your skeleton if you want hands to be visible");
+                    Debug.LogWarning("Skeleton action: " + handSkeleton.skeletonAction.GetPath() + " is not bound. Your controller may not support SteamVR Skeleton Input.");
                     DestroyHand();
                 }
             }
@@ -424,6 +423,6 @@ namespace Valve.VR.InteractionSystem
             return handAnimatorStateId != -1 && handAnimator != null && handAnimator.isInitialized;
         }
 
-
+        
     }
 }
