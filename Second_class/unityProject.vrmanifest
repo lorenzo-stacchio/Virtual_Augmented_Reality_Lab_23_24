@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.second_class.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Lorenzo Stacchio\\Documents\\Projects\\STACCHIO_FORK\\Virtual_Augmented_Reality_Lab_21_22\\Second_class\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Second_class [Testing]"
+        }
+      }
+    }
+  ]
+}
