@@ -10,7 +10,7 @@ The slides of the lessons can be found on [the virtual page dedicated to the cou
 
 
 ## Requirements
-To open and use the project created during the lab lessons, you should have installed [Unity 2018.4.x LTS](https://unity3d.com/get-unity/download/archive).
+To open and use the project created during the lab lessons, you should have installed [Unity 2018.4.35f1](https://unity3d.com/es/unity/whats-new/2018.4.35).
 
 You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**recommended**). 
 
