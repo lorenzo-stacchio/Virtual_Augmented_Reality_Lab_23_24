@@ -16,5 +16,8 @@ You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**re
 
 You also need to install the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to the smartphone (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
 
+
+Finally, you need an [HTC Vive](https://www.vive.com/us/) along with a working installation of [Steam](https://store.steampowered.com/) and [SteamVR](https://store.steampowered.com/steamvr?l=italian).
+
 More details about what to install are in the README file of different projects. 
 
