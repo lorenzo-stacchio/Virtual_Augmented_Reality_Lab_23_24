@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.png" width="350" alt="accessibility text">
+</p>
+
 Versione usabile STEAMVR:
 
 https://github.com/ValveSoftware/steamvr_unity_plugin/releases/tag/2.2.0
