@@ -9,7 +9,6 @@ public class save_position : MonoBehaviour
      
      void Start(){
          this.spawnPos = transform.position;
-         Debug.Log("spawn pos " + spawnPos +" of " + this.gameObject.name);
      }
      
      public Vector3 get_spawn_pos(){
