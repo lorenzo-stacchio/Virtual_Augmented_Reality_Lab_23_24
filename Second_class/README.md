@@ -2,7 +2,11 @@ Versione usabile STEAMVR:
 
 https://github.com/ValveSoftware/steamvr_unity_plugin/releases/tag/2.2.0
 
+# Unity version:
 
+2018.4.35f1
+
+# Bowling balls and pins
 Fonte palla e birilli:
 
 # Asset used from store
