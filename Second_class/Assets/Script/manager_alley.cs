@@ -10,7 +10,7 @@ public class manager_alley : MonoBehaviour
     private int points = 0;
     private int session_points = 0;
     private int hits = 0;
-    public int timeToWait = 3;
+    public int timeToWait = 5;
     public GameObject ball;
     public GameObject pins;
 
