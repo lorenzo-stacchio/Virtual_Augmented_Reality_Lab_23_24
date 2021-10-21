@@ -19,10 +19,10 @@ public class Collisions : MonoBehaviour
         //but other methods could still be called!
         if (this.enabled)
         {
-            //Inibit scripting
-            Collider otherCollider = other.collider;
+            //Inibit scripting of other object
+            // game object in this case refers to the gameobject the Collider is attached
             Change_Color otherscript =
-                otherCollider.GetComponent<Change_Color>();
+                other.gameObject.GetComponent<Change_Color>();
             if (otherscript != null)
             {
                 otherscript.enabled = false;
