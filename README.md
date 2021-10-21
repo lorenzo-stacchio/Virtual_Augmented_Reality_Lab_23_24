@@ -26,7 +26,8 @@ More details about what to install are in the README file of different projects.
 
 There is an open issue regarding the integration of "Install this version with Unity Hub." in Ubuntu. To install a specific version of Unity there is a workaround: 
 
-- Take the link using browser inspector:
-	- Ex. version 2018.4.35f1 is identified with the url unityhub://2018.4.35f1/dbb5675dce2d
-	- Execute ```./$DIR/UnityHub.AppImage unityhub://2018.4.35f1/dbb5675dce2d```, where ```$DIR``` is the dir where the UnityHub app image is located.
-	- You can ease your work adding ```$DIR``` to your ```$PATH``` as stated [here](https://askubuntu.com/questions/60218/how-to-add-a-directory-to-the-path/226947#226947).
+- Take the link using browser inspector and scraping the link associated with to the ```href``` attribute of web html element. E.g., version 2018.4.35f1 is identified with the url ```unityhub://2018.4.35f1/dbb5675dce2d```;
+
+- Execute ```./$DIR/UnityHub.AppImage unityhub://2018.4.35f1/dbb5675dce2d```, where ```$DIR``` is the dir where the UnityHub app image is located;
+
+- You can ease your work adding ```$DIR``` to your ```$PATH``` as stated [here](https://askubuntu.com/questions/60218/how-to-add-a-directory-to-the-path/226947#226947).
