@@ -28,22 +28,9 @@ public class Collisions : MonoBehaviour
                 otherscript.enabled = false;
             }
             Debug.Log("The sphere is colliding");
-            Material new_material = new Material(thisRenderer.material);
-            Color new_color = getRandomColor();
-            new_material.SetColor("_Color", new_color);
-            thisRenderer.material = new_material;
+            // game object refers to the object the script is attachet to!
+            gameObject.AddComponent<Change_Color>();
         }
     }
 
-    /*
-   This function returns a Color object which is defined by a triplet of float values, indicating the value of R,G and B channels that defines a color in the RGB space.
-   */
-    private Color getRandomColor()
-    {
-        Color randomColor =
-            new Color(Random.Range(0.0f, 1.0f),
-                Random.Range(0.0f, 1.0f),
-                Random.Range(0.0f, 1.0f));
-        return randomColor;
-    }
 }
