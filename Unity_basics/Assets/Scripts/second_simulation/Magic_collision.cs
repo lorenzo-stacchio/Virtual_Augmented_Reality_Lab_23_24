@@ -13,7 +13,6 @@ public class Magic_collision : MonoBehaviour
 
     // Start is called before the first frame update
 
-
     void Start()
     {
         //init the render responsible for this object
@@ -26,7 +25,6 @@ public class Magic_collision : MonoBehaviour
         //decide if the ball will move left or right on the x axis
         this.left_right = (Random.Range(0.0f, 1.0f) < 0.5 ? -1 : 1);
     }
-
 
 
     private void Update()

@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class Collisions : MonoBehaviour
 {
-    MeshRenderer thisRenderer; // meshrender component of the object
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        thisRenderer = GetComponent<MeshRenderer>();
-    }
 
     // Manage the object collisions
     private void OnCollisionEnter(Collision other)
