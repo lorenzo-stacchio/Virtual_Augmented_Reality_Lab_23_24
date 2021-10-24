@@ -69,4 +69,11 @@ public class Magic_collision : MonoBehaviour
         return startPosition;
     }
 
+    /*
+    Added optimization instruction as suggested by @RiccardoMaffei --> https://github.com/RiccardoMaffei 
+    */
+    void OnBecameInvisible() {
+         Destroy(gameObject);
+     }
+
 }
