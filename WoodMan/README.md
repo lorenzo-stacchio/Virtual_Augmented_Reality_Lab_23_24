@@ -2,7 +2,7 @@
   <img src="icon.png" width="350" alt="accessibility text">
 </p>
 
-# Virtual and augmented reality laboratory session - 2st
+# Virtual and augmented reality laboratory - Unity Mobile session 
 This simple and small project aims at teaching students basic concepts of Unity and Mobile development:
 * Menus
 * Navigation systems

@@ -1,4 +1,8 @@
-# Virtual and augmented reality laboratory session - 1st
+<p align="center">
+  <img src="icon.png" width="350" alt="accessibility text">
+</p>
+
+# Virtual and augmented reality laboratory - Unity Basics session
 This simple and small project aims at teaching students basic concepts of Unity such as:
 * Object creation and manipulation
 * Object physics
