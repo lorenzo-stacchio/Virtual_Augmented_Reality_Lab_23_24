@@ -20,7 +20,7 @@ public class Magic_collision : MonoBehaviour
         this.startPosition = this.transform.position;
         //Fetch the GameObject's Collider (make sure they have a Collider component)
         var m_ObjectCollider = GetComponent<SphereCollider>();
-        //Here the GameObject's Collider is not a trigger
+        //Here the GameObject's Collider is not a trigger, we want the sphere to not pass through the floor in any case
         m_ObjectCollider.isTrigger = false;
         //decide if the ball will move left or right on the x axis
         this.left_right = (Random.Range(0.0f, 1.0f) < 0.5 ? -1 : 1);
@@ -66,7 +66,7 @@ public class Magic_collision : MonoBehaviour
     */
     public Vector3 getStartPosition()
     {
-        return startPosition;
+        return this.startPosition;
     }
 
     /*
