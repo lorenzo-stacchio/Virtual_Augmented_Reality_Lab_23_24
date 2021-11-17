@@ -36,4 +36,4 @@ The SDK, along with the NDK, can be installed in two different file system locat
 
 
 ##  Troubleshooting
-- If controllers doesn't appear with the cited version of SteamVR plugin, you have to delete the SteamVRInput and refresh the base bindings using Window -> SteamVRInput -> Save & generate
+- If controllers doesn't appear with the cited version of SteamVR plugin, you have to delete both Steam and SteamVRInput and import again, creating again base bindings using Window -> SteamVRInput -> Save & generate
