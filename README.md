@@ -22,7 +22,7 @@ Finally, you need an [HTC Vive](https://www.vive.com/us/) along with a working i
 More details about what to install are in the README file of different projects. 
 
 
-## Troubleshooting
+## Troubleshooting 1 
 
 There is an open issue regarding the integration of "Install this version with Unity Hub." in Ubuntu. To install a specific version of Unity there is a workaround: 
 
@@ -31,3 +31,17 @@ There is an open issue regarding the integration of "Install this version with U
 - Execute ```./$DIR/UnityHub.AppImage unityhub://2018.4.35f1/dbb5675dce2d```, where ```$DIR``` is the dir where the UnityHub app image is located;
 
 - You can ease your work adding ```$DIR``` to your ```$PATH``` as stated [here](https://askubuntu.com/questions/60218/how-to-add-a-directory-to-the-path/226947#226947).
+
+
+## Troubleshooting 2
+
+Google VR old sdk, unity 2019.4.35f1. Install android...
+
+
+https://github.com/googlevr/gvr-unity-sdk/releases
+
+
+## Troubleshooting 3
+
+Oh no, new cardboard can be used but not debugged from editor... 
+https://github.com/googlevr/cardboard/issues/324#issuecomment-1021380509

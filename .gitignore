@@ -163,3 +163,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Ignore google cardboard sdk
+google_cardboard_sdk/Assets/GoogleVR/*
