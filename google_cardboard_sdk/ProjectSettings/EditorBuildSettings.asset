@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HelloVR.unity
-    guid: 0ef9aac10c1664644b5830b563a6d31a
+    path: Assets/Scenes/HelloVR 1.unity
+    guid: 637f0c25b4218534fb5a6a974c0f850e
   m_configObjects: {}
