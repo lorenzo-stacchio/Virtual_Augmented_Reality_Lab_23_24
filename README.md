@@ -1,20 +1,20 @@
-# Unibo Virtual Augmented Reality Lab 2021/2022
+# Unibo Virtual Augmented Reality Lab 2022/2023
 ![varlab_unibo_logo](./images/varlab_unibo.png)
 
-This repository contains some Unity projects presented during laboratory classes of the [Virtual and Augmented Reality Laboratory course](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/447969) at the [Alma Mater Studiorum University](https://www.unibo.it/en), organized by the [VARLab](https://site.unibo.it/varlab/en). 
+This repository contains some Unity projects presented during laboratory classes of the [Virtual and Augmented Reality Laboratory course](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2022/447969) at the [Alma Mater Studiorum University](https://www.unibo.it/en), taught by [Lorenzo Stacchio](https://lorenzo-stacchio.github.io/) member of the [VARLab](https://site.unibo.it/varlab/en). 
 
 
 ## General info
 Each folder contains a Unity project, which could be divided into various Unity Scenes.
-The slides of the classes can be found on [the virtual page dedicated to the course](https://virtuale.unibo.it/course/view.php?id=31071).
+The slides of the classes can be found on [the virtual page dedicated to the course](https://virtuale.unibo.it/course/view.php?id=41333).
 
 
 ## Requirements
-To open and use the project created during the lab lessons, you should have installed [Unity 2018.4.35f1](https://unity3d.com/es/unity/whats-new/2018.4.35).
+To open and use the project created during the lab lessons, you should have installed [Unity 2019.4.39f1](https://unity3d.com/es/unity/whats-new/2019.4.39).
 
-You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**recommended**). 
+You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**recommended**) by clicking [here](unityhub://2019.4.39f1/78d14dfa024b). 
 
-You also need to install the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to the smartphone (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
+You also need to install the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to android devices (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
 
 
 Finally, you need an [HTC Vive](https://www.vive.com/us/) along with a working installation of [Steam](https://store.steampowered.com/) and [SteamVR](https://store.steampowered.com/steamvr?l=italian).
