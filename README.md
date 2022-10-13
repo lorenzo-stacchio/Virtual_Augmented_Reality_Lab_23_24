@@ -37,7 +37,7 @@ There is an open issue regarding the integration of "Install this version with U
 
 Google VR old sdk, unity 2019.4.35f1. Install android...
 
-
+Import as assett:
 https://github.com/googlevr/gvr-unity-sdk/releases
 
 
