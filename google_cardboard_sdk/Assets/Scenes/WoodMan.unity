@@ -126,12 +126,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 907292808}
+    m_TransformParent: {fileID: 959308593}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 46ae0d0a6b14d0841a980595d2198408,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46ae0d0a6b14d0841a980595d2198408,
         type: 3}
@@ -156,12 +156,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 46ae0d0a6b14d0841a980595d2198408,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.24
+      value: -0.24000001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46ae0d0a6b14d0841a980595d2198408,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.76
+      value: -0.75999975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46ae0d0a6b14d0841a980595d2198408,
         type: 3}
@@ -516,7 +516,6 @@ Transform:
   m_Children:
   - {fileID: 959308593}
   - {fileID: 1960902410}
-  - {fileID: 243595408}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -669,6 +668,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 848404733}
+  - {fileID: 243595408}
   m_Father: {fileID: 907292808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -871,42 +871,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1678123547}
-          m_MethodName: SetGazedAt
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1678123547}
-          m_MethodName: SetGazedAt
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1678123547}
-          m_MethodName: TeleportRandomly
+          m_MethodName: Teleport
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -928,8 +898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651fb926d0ba10a458d3c0119adb8301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveMaterial: {fileID: 2100000, guid: 810bcd1969e637645981507550494019, type: 2}
-  gazedAtMaterial: {fileID: 2100000, guid: 810bcd1969e637645981507550494019, type: 2}
 --- !u!1 &1691476902
 GameObject:
   m_ObjectHideFlags: 0

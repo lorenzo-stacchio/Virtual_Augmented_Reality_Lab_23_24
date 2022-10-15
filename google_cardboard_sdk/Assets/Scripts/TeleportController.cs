@@ -23,31 +23,8 @@ using UnityEngine.EventSystems;
 
 /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
 [RequireComponent(typeof(Collider))]
-public class MushroomController : MonoBehaviour
+public class TeleportController : MonoBehaviour
 {
-    /// <summary>
-    /// The material to use when this object is inactive (not being gazed at).
-    /// </summary>
-    public Material inactiveMaterial;
-
-    /// <summary>The material to use when this object is active (gazed at).</summary>
-    public Material gazedAtMaterial;
-
-    private Vector3 startingPosition;
-    private Renderer myRenderer;
-
-    /// <summary>Sets this instance's GazedAt state.</summary>
-    /// <param name="gazedAt">
-    /// Value `true` if this object is being gazed at, `false` otherwise.
-    /// </param>
-    public void SetGazedAt(bool gazedAt)
-    {
-        if (inactiveMaterial != null && gazedAtMaterial != null)
-        {
-            myRenderer.material = gazedAt ? gazedAtMaterial : inactiveMaterial;
-            return;
-        }
-    }
 
     /// <summary>Calls the Recenter event.</summary>
     public void Recenter()
@@ -62,9 +39,8 @@ public class MushroomController : MonoBehaviour
 #endif  // !UNITY_EDITOR
     }
 
-    /// <summary>Teleport this instance randomly when triggered by a pointer click.</summary>
-    /// <param name="eventData">The pointer click event which triggered this call.</param>
-    public void TeleportRandomly(BaseEventData eventData)
+  
+    public void Teleport(BaseEventData eventData)
     {
         // Only trigger on left input button, which maps to
         // Daydream controller TouchPadButton and Trigger buttons.
@@ -84,12 +60,7 @@ public class MushroomController : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        startingPosition = transform.localPosition;
-        myRenderer = GetComponent<Renderer>();
-        SetGazedAt(false);
-    }
+    
 
 
 

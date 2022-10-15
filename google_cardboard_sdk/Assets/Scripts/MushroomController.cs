@@ -23,7 +23,7 @@ using UnityEngine.EventSystems;
 
 /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
 [RequireComponent(typeof(Collider))]
-public class MushroomController1 : MonoBehaviour
+public class MushroomController : MonoBehaviour
 {
     /// <summary>Calls the Recenter event.</summary>
     public void Recenter()
@@ -43,7 +43,7 @@ public class MushroomController1 : MonoBehaviour
     /// 
     public void Collect(BaseEventData eventData)
     {
-        WoodMan1.instance.collect_mushroom();
+        WoodMan.instance.collect_mushroom();
         Destroy(gameObject);   
     }
 

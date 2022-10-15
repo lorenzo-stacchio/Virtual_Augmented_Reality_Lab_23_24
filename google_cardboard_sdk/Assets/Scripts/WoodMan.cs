@@ -4,14 +4,14 @@ using UnityEngine;
 using TMPro;
 
 
-public class WoodMan1 : myPlayer
+public class WoodMan : MonoBehaviour
 {
-    public static WoodMan1 instance; // woodman is a singleton
+    public static WoodMan instance; // woodman is a singleton
     private int mushrooms_collected;
     private TextMeshProUGUI punteggio;
 
     // Start is called before the first frame update
-    public override void Start()
+    public void Start()
     {
         instance = this;
         this.punteggio = GameObject.Find("Punteggio").GetComponent<TextMeshProUGUI>();
