@@ -25,6 +25,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Collider))]
 public class MushroomController : MonoBehaviour
 {
+
     /// <summary>Calls the Recenter event.</summary>
     public void Recenter()
     {
@@ -44,10 +45,9 @@ public class MushroomController : MonoBehaviour
     public void Collect(BaseEventData eventData)
     {
         WoodMan.instance.collect_mushroom();
-        Destroy(gameObject);   
+        Destroy(gameObject);
+
     }
-
-
 
 }
 

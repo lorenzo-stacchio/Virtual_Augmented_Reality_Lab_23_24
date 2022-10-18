@@ -19,11 +19,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int mushroom_to_spawn;
 
+
     private Vector3 terrain_size;
     private Vector3 terrain_center;
     private Vector3 top_left;
     private Vector3 bot_right;
 
+
+ 
 
 
 
@@ -32,6 +35,9 @@ public class GameManager : MonoBehaviour
     {
         this.get_field_geometry();
         this.generate_n_mushrooms(this.mushroom_to_spawn);
+        GameObject.Find("Punteggio").GetComponent<CanvasRenderer>().cull = false;
+        GameObject.Find("Game_finished").GetComponent<CanvasRenderer>().cull = true;
+
 
     }
 
@@ -75,6 +81,30 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+
+    public void check_all_mushroom_collected(){
+
+        Debug.Log("count mushrooms" + this.mushroom_field.transform.childCount.ToString());
+        if (this.mushroom_field.transform.childCount == 0) //the game is end
+        {
+            // get points canvas and disable it
+            GameObject.Find("Punteggio").GetComponent<CanvasRenderer>().cull = true;
+            GameObject.Find("Game_finished").GetComponent<CanvasRenderer>().cull = false;
+        }
+
+
+
+    }
+
+    public void Update()
+    {
+        this.check_all_mushroom_collected();
+
+    }
+
+
+
 
 
 }

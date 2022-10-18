@@ -10,6 +10,7 @@ public class WoodMan : MonoBehaviour
     private int mushrooms_collected;
     private TextMeshProUGUI punteggio;
 
+
     // Start is called before the first frame update
     public void Start()
     {
