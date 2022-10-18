@@ -22,26 +22,11 @@ Finally, you need an [HTC Vive](https://www.vive.com/us/) along with a working i
 More details about what to install are in the README file of different projects. 
 
 
-## Troubleshooting 1 
+## Course Program
 
-There is an open issue regarding the integration of "Install this version with Unity Hub." in Ubuntu. To install a specific version of Unity there is a workaround: 
-
-- Take the url associated to the Unity version of interest using browser inspector, scraping it through the associated ```href``` html element attribute. E.g., version 2018.4.35f1 is identified by the url ```unityhub://2018.4.35f1/dbb5675dce2d```;
-
-- Execute ```./$DIR/UnityHub.AppImage unityhub://2018.4.35f1/dbb5675dce2d```, where ```$DIR``` is the dir where the UnityHub app image is located;
-
-- You can ease your work adding ```$DIR``` to your ```$PATH``` as stated [here](https://askubuntu.com/questions/60218/how-to-add-a-directory-to-the-path/226947#226947).
-
-
-## Troubleshooting 2
-
-Google VR old sdk, unity 2019.4.35f1. Install android...
-
-Import as assett:
-https://github.com/googlevr/gvr-unity-sdk/releases
-
-
-## Troubleshooting 3
-
-Oh no, new cardboard can be used but not debugged from editor... 
-https://github.com/googlevr/cardboard/issues/324#issuecomment-1021380509
+| Date  | Topic | Professor | Slide | Practical material |
+| ------------- | ------------- | ------------- |-----------------------------------------------------------------------------------------------------------------| ------------- |
+| 1st class  | Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Unity basics](Unity_basics/)    |
+| 2nd class  | Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Android & Google cardboard](google_cardboard_sdk/)    |
+| 3rd class  | Htc vive basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Htc vive basics](Htc_vive_basics/) <br>  [BoVRling](Second_class/)   |
+<!-- | 4th class  | Vuforia AR | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Unity basics](Unity_basics/)    | -->

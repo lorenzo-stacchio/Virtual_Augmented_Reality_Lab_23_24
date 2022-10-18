@@ -5,3 +5,9 @@ To build and run directly on android, you must uninstall the previous app (same 
 
 
 
+
+
+## Bad guys
+
+Oh no, new cardboard can be used but not debugged from editor... 
+https://github.com/googlevr/cardboard/issues/324#issuecomment-1021380509
