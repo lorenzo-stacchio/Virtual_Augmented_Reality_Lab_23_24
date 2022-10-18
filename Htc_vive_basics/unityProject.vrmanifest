@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.htc_vive_basics.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Lorenzo Stacchio\\Virtual_Augmented_Reality_Lab_22_23\\Htc_vive_basics\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Htc_vive_basics [Testing]"
+        }
+      }
+    }
+  ]
+}
