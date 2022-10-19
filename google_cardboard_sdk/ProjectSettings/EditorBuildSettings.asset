@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WoodMan.unity
+    path: Assets/Scenes/Royal Hog.unity
     guid: 637f0c25b4218534fb5a6a974c0f850e
   m_configObjects: {}
