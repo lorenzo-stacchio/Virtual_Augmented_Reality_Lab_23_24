@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 
 
-public class WoodMan : MonoBehaviour
+public class Royal_Hog : MonoBehaviour
 {
-    public static WoodMan instance; // woodman is a singleton
+    public static Royal_Hog instance; // woodman is a singleton
     private int mushrooms_collected;
     private TextMeshProUGUI punteggio;
 

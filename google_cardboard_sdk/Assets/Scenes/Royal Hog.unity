@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 907292808}
   - component: {fileID: 907292809}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Royal_Hog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -44,7 +44,7 @@ public class MushroomController : MonoBehaviour
     /// 
     public void Collect(BaseEventData eventData)
     {
-        WoodMan.instance.collect_mushroom();
+        Royal_Hog.instance.collect_mushroom();
         Destroy(gameObject);
 
     }

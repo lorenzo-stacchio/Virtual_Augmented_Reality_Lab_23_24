@@ -55,7 +55,7 @@ public class TeleportController : MonoBehaviour
 
         Vector3 temp = ped.pointerPressRaycast.worldPosition;
         UnityEngine.Debug.Log("OnBeginDrag: " + temp);
-        GameObject player = GameObject.Find("Player");
+        GameObject player = GameObject.Find("Royal_Hog");
         player.transform.position = new Vector3(temp.x, player.transform.position.y, temp.z);
         
     }
