@@ -166,6 +166,3 @@ typings/
 
 # Ignore google cardboard sdk
 google_cardboard_sdk/Assets/GoogleVR/*
-
-
-# BoVRling/
