@@ -10,11 +10,11 @@ The slides of the classes can be found on [the virtual page dedicated to the cou
 
 
 ## Requirements
-To open and use the project created during the lab lessons, you should have installed [Unity 2019.4.39f1](https://unity3d.com/es/unity/whats-new/2019.4.39).
+To open and use the project created during the lab lessons, you should install [Unity 2019.4.39f1](https://unity3d.com/es/unity/whats-new/2019.4.39).
 
 You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**recommended**) by clicking [here](unityhub://2019.4.39f1/78d14dfa024b). 
 
-You also need to install the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to android devices (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
+You also need to download the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to android devices (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
 
 
 Finally, you need an [HTC Vive](https://www.vive.com/us/) along with a working installation of [Steam](https://store.steampowered.com/) and [SteamVR](https://store.steampowered.com/steamvr?l=italian).
