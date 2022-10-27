@@ -166,3 +166,7 @@ typings/
 
 # Ignore google cardboard sdk
 google_cardboard_sdk/Assets/GoogleVR/*
+
+# ignore sketchfab for unity
+google_cardboard_sdk/Assets/Import/*
+google_cardboard_sdk/Assets/Sketchfab For Unity/*

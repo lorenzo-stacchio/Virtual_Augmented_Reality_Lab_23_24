@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,26 +18,29 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField]
-    private int mushroom_to_spawn;
+    private int mushrooms_to_spawn;
+    private int mushrooms_collected;
 
+    private static GameManager instance;
 
     private Vector3 terrain_size;
     private Vector3 terrain_center;
     private Vector3 top_left;
     private Vector3 bot_right;
-
-
- 
-
+    private TextMeshProUGUI punteggio;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        this.get_field_geometry();
-        this.generate_n_mushrooms(this.mushroom_to_spawn);
-        GameObject.Find("Punteggio").GetComponent<CanvasRenderer>().cull = false;
-        GameObject.Find("Game_finished").GetComponent<CanvasRenderer>().cull = true;
+        instance = this;
+        instance.mushrooms_collected = 0;
+        instance.punteggio = GameObject.Find("Info_Game_Text").GetComponent<TextMeshProUGUI>();
+
+        instance.get_field_geometry();
+        instance.generate_n_mushrooms(instance.mushrooms_to_spawn);
+        // GameObject.Find("Info_Game_Text").GetComponent<CanvasRenderer>().cull = false;
+        // GameObject.Find("Game_finished").GetComponent<CanvasRenderer>().cull = true;
 
 
     }
@@ -52,12 +56,12 @@ public class GameManager : MonoBehaviour
         float boundsZ = terrain.transform.localScale.z * bounds.size.z;
         //Debug.Log(boundsX);
         //Debug.Log(boundsZ);
-        this.terrain_size = new Vector3(boundsX, boundsY, boundsZ);
-        this.terrain_center = bounds.center;//.bounds.center;
+        instance.terrain_size = new Vector3(boundsX, boundsY, boundsZ);
+        instance.terrain_center = bounds.center;//.bounds.center;
         Debug.Log(terrain_center);
         // We are moving along the x and z axis
-        this.top_left = new Vector3((this.terrain_center.x - (this.terrain_size.x / 2)), 0, (this.terrain_center.z - (this.terrain_size.z / 2)));
-        this.bot_right = new Vector3((this.terrain_center.x + (this.terrain_size.x / 2)), 0, (this.terrain_center.z + (this.terrain_size.z / 2)));
+        instance.top_left = new Vector3((instance.terrain_center.x - (instance.terrain_size.x / 2)), 0, (instance.terrain_center.z - (instance.terrain_size.z / 2)));
+        instance.bot_right = new Vector3((instance.terrain_center.x + (instance.terrain_size.x / 2)), 0, (instance.terrain_center.z + (instance.terrain_size.z / 2)));
         Debug.Log(top_left);
         Debug.Log(bot_right);
     }
@@ -70,39 +74,54 @@ public class GameManager : MonoBehaviour
         foreach (int num in squares)
         {
             Debug.Log(num);
-            float x = Random.Range(this.top_left.x, this.bot_right.x);
-            float z = Random.Range(this.top_left.z, this.bot_right.z);
+            float x = Random.Range(instance.top_left.x, instance.bot_right.x);
+            float z = Random.Range(instance.top_left.z, instance.bot_right.z);
 
-            Vector3 mushroom_position = new Vector3(x,this.terrain.transform.position.y,z);
-            GameObject new_mushroom = Instantiate(this.mushroom_prefab);
+            Vector3 mushroom_position = new Vector3(x,instance.terrain.transform.position.y,z);
+            GameObject new_mushroom = Instantiate(instance.mushroom_prefab);
             new_mushroom.name = "mushroom_" + num.ToString();
             new_mushroom.transform.position = mushroom_position;
-            new_mushroom.transform.SetParent(this.mushroom_field.transform);
+            new_mushroom.transform.SetParent(instance.mushroom_field.transform);
         }
+        
+        string init_message = string.Format("Funghi raccolti: {0}/{1}", instance.mushrooms_collected.ToString(), instance.mushrooms_to_spawn.ToString());
+
+        update_info(init_message);
+
 
     }
 
 
-    public void check_all_mushroom_collected(){
+    void check_all_mushroom_collected(){
 
-        Debug.Log("count mushrooms" + this.mushroom_field.transform.childCount.ToString());
-        if (this.mushroom_field.transform.childCount == 0) //the game is end
+        Debug.Log("count mushrooms" + instance.mushroom_field.transform.childCount.ToString());
+        Debug.Log("count mushrooms novel" + instance.mushrooms_collected.ToString() +  instance.mushrooms_to_spawn.ToString());
+        Debug.Log(instance.mushrooms_collected.Equals(instance.mushrooms_to_spawn));
+        if (instance.mushrooms_collected.Equals(instance.mushrooms_to_spawn)) //the game is end
         {
             // get points canvas and disable it
-            GameObject.Find("Punteggio").GetComponent<CanvasRenderer>().cull = true;
-            GameObject.Find("Game_finished").GetComponent<CanvasRenderer>().cull = false;
+           Debug.Log("here");
+           string end_message = "Complimenti! Viva i funghi!";
+           update_info(end_message);
+
+        } else{
+        string update_message = string.Format("Funghi raccolti: {0}/{1}", instance.mushrooms_collected.ToString(), instance.mushrooms_to_spawn.ToString());
+        instance.update_info(update_message);
+
         }
 
-
-
     }
 
-    public void Update()
-    {
-        this.check_all_mushroom_collected();
 
+    void update_info(string message){
+        punteggio.text = message;
     }
 
+
+    public static void collect_mushroom(){
+        instance.mushrooms_collected +=1;
+        instance.check_all_mushroom_collected();
+    }
 
 
 
