@@ -1,8 +1,10 @@
 using UnityEditor;
 using UnityEngine;
 
+
 public class ShowNormal : MonoBehaviour
 {
+    #if UNITY_EDITOR // AVOID COMPILING IT FOR ANDROID, IT WOULDN'T COMPILE!
     public bool isShowNormal;
     public Color color = Color.yellow;
     public float normalsLength = 1f;
@@ -34,4 +36,6 @@ public class ShowNormal : MonoBehaviour
 
         Handles.color = defaultColor;
     }
+    #endif  // !UNITY_EDITOR
 }
+

@@ -39,9 +39,6 @@ public class GameManager : MonoBehaviour
 
         instance.get_field_geometry();
         instance.generate_n_mushrooms(instance.mushrooms_to_spawn);
-        // GameObject.Find("Info_Game_Text").GetComponent<CanvasRenderer>().cull = false;
-        // GameObject.Find("Game_finished").GetComponent<CanvasRenderer>().cull = true;
-
 
     }
 
@@ -50,12 +47,11 @@ public class GameManager : MonoBehaviour
     {
         Mesh planeMesh = terrain.GetComponent<MeshFilter>().mesh;
         Bounds bounds = planeMesh.bounds;
-        // size in pixels
-        float boundsX = terrain.transform.localScale.x * bounds.size.x;
+        // real size of the graphical object
+        float boundsX = terrain.transform.localScale.x * bounds.size.x; //multiply the bounds of the mesh for the local scale factor
         float boundsY = terrain.transform.localScale.y * bounds.size.y;
         float boundsZ = terrain.transform.localScale.z * bounds.size.z;
-        //Debug.Log(boundsX);
-        //Debug.Log(boundsZ);
+
         instance.terrain_size = new Vector3(boundsX, boundsY, boundsZ);
         instance.terrain_center = bounds.center;//.bounds.center;
         Debug.Log(terrain_center);
