@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
 
         instance.get_field_geometry();
         instance.generate_n_mushrooms(instance.mushrooms_to_spawn);
-
     }
 
 
@@ -54,12 +53,10 @@ public class GameManager : MonoBehaviour
 
         instance.terrain_size = new Vector3(boundsX, boundsY, boundsZ);
         instance.terrain_center = bounds.center;//.bounds.center;
-        Debug.Log(terrain_center);
+
         // We are moving along the x and z axis
         instance.top_left = new Vector3((instance.terrain_center.x - (instance.terrain_size.x / 2)), 0, (instance.terrain_center.z - (instance.terrain_size.z / 2)));
         instance.bot_right = new Vector3((instance.terrain_center.x + (instance.terrain_size.x / 2)), 0, (instance.terrain_center.z + (instance.terrain_size.z / 2)));
-        Debug.Log(top_left);
-        Debug.Log(bot_right);
     }
 
 
@@ -69,7 +66,6 @@ public class GameManager : MonoBehaviour
         IEnumerable<int> squares = Enumerable.Range(1, n).Select(x => x * x);
         foreach (int num in squares)
         {
-            Debug.Log(num);
             float x = Random.Range(instance.top_left.x, instance.bot_right.x);
             float z = Random.Range(instance.top_left.z, instance.bot_right.z);
 
@@ -79,33 +75,22 @@ public class GameManager : MonoBehaviour
             new_mushroom.transform.position = mushroom_position;
             new_mushroom.transform.SetParent(instance.mushroom_field.transform);
         }
-        
         string init_message = string.Format("Funghi raccolti: {0}/{1}", instance.mushrooms_collected.ToString(), instance.mushrooms_to_spawn.ToString());
-
         update_info(init_message);
-
-
     }
 
 
     void check_all_mushroom_collected(){
-
-        Debug.Log("count mushrooms" + instance.mushroom_field.transform.childCount.ToString());
-        Debug.Log("count mushrooms novel" + instance.mushrooms_collected.ToString() +  instance.mushrooms_to_spawn.ToString());
-        Debug.Log(instance.mushrooms_collected.Equals(instance.mushrooms_to_spawn));
         if (instance.mushrooms_collected.Equals(instance.mushrooms_to_spawn)) //the game is end
         {
             // get points canvas and disable it
-           Debug.Log("here");
            string end_message = "Complimenti! Viva i funghi!";
            update_info(end_message);
 
         } else{
         string update_message = string.Format("Funghi raccolti: {0}/{1}", instance.mushrooms_collected.ToString(), instance.mushrooms_to_spawn.ToString());
         instance.update_info(update_message);
-
         }
-
     }
 
 
