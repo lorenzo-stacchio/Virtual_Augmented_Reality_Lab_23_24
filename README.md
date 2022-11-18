@@ -17,7 +17,9 @@ You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**re
 You also need to download the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to android devices (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
 
 
-Finally, you need an [HTC Vive](https://www.vive.com/us/) along with a working installation of [Steam](https://store.steampowered.com/) and [SteamVR](https://store.steampowered.com/steamvr?l=italian).
+Then, you will need an [HTC Vive](https://www.vive.com/us/) along with a working installation of [Steam](https://store.steampowered.com/) and [SteamVR](https://store.steampowered.com/steamvr?l=italian).
+
+Finally, to use and deploy the [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) apps introduced in these classes, you will need to download the **MRTK foundation** and **MRTK examples** unity packages for the target MRTK version from the [github release page](https://github.com/microsoft/MixedRealityToolkit-Unity/releases). 
 
 More details about what to install are in the README file of different projects. 
 
@@ -29,4 +31,4 @@ More details about what to install are in the README file of different projects.
 | 1st class  | Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Unity basics](Unity_basics/)    |
 | 2nd class  | Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Android & Google cardboard](google_cardboard_sdk/)    |
 | 3rd class  | Htc vive basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Htc vive basics](Htc_vive_basics/) <br>  [BoVRling](BoVRling/)   |
-<!-- | 4th class  | Vuforia AR | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Unity basics](Unity_basics/)    | -->
+| 4th class  | Hololens and MRTK basics  | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [MRTK basics](MRTK_basics/)|
