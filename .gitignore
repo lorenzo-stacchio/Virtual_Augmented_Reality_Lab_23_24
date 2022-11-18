@@ -170,3 +170,7 @@ google_cardboard_sdk/Assets/GoogleVR/*
 # ignore sketchfab for unity
 google_cardboard_sdk/Assets/Import/*
 google_cardboard_sdk/Assets/Sketchfab For Unity/*
+
+# ignore MRTK packages
+MRTK_basics/Assets/MixedRealityToolkit*
+MRTK_basics/Assets/MRTK*
