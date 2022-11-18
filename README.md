@@ -29,6 +29,6 @@ More details about what to install are in the README file of different projects.
 | Date  | Topic | Professor | Slide | Practical material |
 | ------------- | ------------- | ------------- |-----------------------------------------------------------------------------------------------------------------| ------------- |
 | 1st class  | Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Unity basics](Unity_basics/)    |
-| 2nd class  | Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Android & Google cardboard](google_cardboard_sdk/)    |
-| 3rd class  | Htc vive basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Htc vive basics](Htc_vive_basics/) <br>  [BoVRling](BoVRling/)   |
-| 4th class  | Hololens and MRTK basics  | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [MRTK basics](MRTK_basics/)|
+| 2nd class  | Unity android | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Android & Google cardboard](google_cardboard_sdk/)    |
+| 3rd class  | Htc vive Unity basics | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [Htc vive basics](Htc_vive_basics/) <br>  [BoVRling](BoVRling/)   |
+| 4th class  | Hololens and MRTK for Unity basics  | [Lorenzo Stacchio](https://www.unibo.it/sitoweb/lorenzo.stacchio2) | Not present | [MRTK basics](MRTK_basics/)|
