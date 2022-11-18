@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class MyHandTouchHandler : MonoBehaviour, IMixedRealityTouchHandler
 {
-    #region Event handlers
     public TouchEvent OnTouchCompleted;
     public TouchEvent OnTouchStarted;
     public TouchEvent OnTouchUpdated;
-    #endregion
 
     [SerializeField]
     private float rotateSpeed = 300.0f;
