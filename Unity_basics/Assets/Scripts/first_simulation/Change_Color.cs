@@ -12,6 +12,7 @@ public class Change_Color : MonoBehaviour
         thisRenderer = GetComponent<MeshRenderer>();
     }
 
+    
     void Update()
     {
         Material new_material = new Material(thisRenderer.material);

@@ -8,11 +8,14 @@ public class Magic_collision : MonoBehaviour
 
     private MeshRenderer thisRenderer; // meshrender component of the object 
     private Vector3 startPosition; // start position of the object in the x,y,z space
+    
+    //[SerializeField]
     private float velocity = 1.0E-0f; // costant value fot the velocity of the object
+   
     private int left_right; //integer value used to decide in which direction a new ball will be created
 
-    // Start is called before the first frame update
 
+    // Start is called before the first frame update
     void Start()
     {
         //init the render responsible for this object
@@ -32,7 +35,7 @@ public class Magic_collision : MonoBehaviour
         //change object position
         Vector3 oldPosition = this.transform.position;
         //we are moving on the x-axis
-        this.transform.position = new Vector3(oldPosition[0] + left_right * Time.deltaTime * velocity, oldPosition[1], oldPosition[2]);
+        this.transform.position = new Vector3(oldPosition[0] + (left_right * Time.deltaTime * velocity), oldPosition[1], oldPosition[2]);
     }
 
 
@@ -64,14 +67,12 @@ public class Magic_collision : MonoBehaviour
     /*
     This function return a Vector3 type, indicating the position in which the object lies in x,y,z space at the start of the simulation.  
     */
+
     public Vector3 getStartPosition()
     {
         return this.startPosition;
     }
 
-    /*
-    Added optimization instruction as suggested by @RiccardoMaffei --> https://github.com/RiccardoMaffei 
-    */
     void OnBecameInvisible() {
          Destroy(gameObject);
      }
