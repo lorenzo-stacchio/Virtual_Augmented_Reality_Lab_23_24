@@ -39,7 +39,19 @@ public class RotateHouse : MonoBehaviour
 
     public void SetAbsoluteRotation(float xRotationAsbolute)
     {
-        Vector3 newRotation = new Vector3(xRotationAsbolute * 360.0f, 0,0);
+
+        //Vector3 newRotation = new Vector3(xRotationAsbolute * 360.0f, 0,0);
+        //float newValue = Random.Range(180.0f, 360.0f);
+        float start = 180.0f;
+        float end = 360.0f; 
+        
+        float newValue = start + (end-start) * Random.Range(0.0f, 1.0f); 
+        
+        //Random.Range(0.0f, 90.0f);
+        
+
+
+        Vector3 newRotation = new Vector3(xRotationAsbolute * newValue, 0, 0);
 
         this.transform.rotation = Quaternion.Euler(newRotation);
     }
