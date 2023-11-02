@@ -17,12 +17,13 @@ public class Teleport : MonoBehaviour
 
     public void TeleportMove(BaseEventData data)
     {
-
+        if (Singleton2.instance.getMode() == ModePlayer.Teleport) {
         PointerEventData pointData = data as PointerEventData;
         
         Vector3 toTeleport = pointData.pointerPressRaycast.worldPosition; //posizione assoluta
         
-        this.player.transform.position = new Vector3 (toTeleport.x, this.transform.position.y + offset, toTeleport.z);
+        this.player.transform.position = new Vector3 (toTeleport.x, this.player.transform.position.y, toTeleport.z);
+        }
     }
 
 
