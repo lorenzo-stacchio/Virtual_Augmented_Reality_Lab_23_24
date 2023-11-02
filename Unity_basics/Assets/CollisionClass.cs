@@ -18,31 +18,43 @@ public class CollisionClass : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
         string name = collision.gameObject.name;
         Debug.Log("INCIDENTE NINONINO  " + name);
-        collision.gameObject.transform.Rotate(this.customRotation);
+
+        if (collision.gameObject.tag == "Rotatable")
+        {
+            collision.gameObject.transform.Rotate(this.customRotation);
+            // CHANGE COLOR
+            this.gameObject.GetComponent<MeshRenderer>().material.color = this.ChangeColorRandomly();
+
+            if (collision.gameObject.GetComponent<ChangeColorCont>() == null)
+            {
+                collision.gameObject.AddComponent<ChangeColorCont>();
+                Destroy(this.gameObject.GetComponent<ChangeColorCont>());
+            }
+            else
+            {
+                this.gameObject.AddComponent<ChangeColorCont>();
+                Destroy(collision.gameObject.GetComponent<ChangeColorCont>());
+            }
+        }
+
         if (collision.gameObject.tag == "Reposition")
         {
             this.gameObject.transform.position = this.initPosition;
         }
 
-        // CHANGE COLOR
-        this.gameObject.GetComponent<MeshRenderer>().material.color = this.ChangeColorRandomly();
-
-        if (collision.gameObject.GetComponent<ChangeColorCont>() == null)
-        {
-            collision.gameObject.AddComponent<ChangeColorCont>();
-            Destroy(this.gameObject.GetComponent<ChangeColorCont>());
-        } 
-        else
-        {
-            this.gameObject.AddComponent<ChangeColorCont>();
-            Destroy(collision.gameObject.GetComponent<ChangeColorCont>());
-        }      
 
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger Entered");
+        this.gameObject.GetComponent<MeshRenderer>().material.color = this.ChangeColorRandomly();
+
+    }
+
 
     private Color ChangeColorRandomly()
     {
