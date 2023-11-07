@@ -21,6 +21,8 @@ public class Teleport : MonoBehaviour
         PointerEventData pointData = data as PointerEventData;
         
         Vector3 toTeleport = pointData.pointerPressRaycast.worldPosition; //posizione assoluta
+
+        Debug.Log(toTeleport);
         
         this.player.transform.position = new Vector3 (toTeleport.x, this.player.transform.position.y, toTeleport.z);
         }

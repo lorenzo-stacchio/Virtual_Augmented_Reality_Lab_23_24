@@ -19,6 +19,10 @@ public class Singleton2 : MonoBehaviour
     [SerializeField]
     private GameObject buttonTeleportText;
 
+    [SerializeField]
+    private GameObject textReportScore;
+
+
     public static Singleton2 instance;
 
     private int score;
@@ -57,6 +61,7 @@ public class Singleton2 : MonoBehaviour
     public void IncreaseScore()
     {
         this.score += 1;
+        this.textReportScore.GetComponent<TextMeshProUGUI>().text = "Actual score:" + this.score;
     }
 
     public void Update()
